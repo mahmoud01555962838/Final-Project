@@ -10,6 +10,7 @@ class Product extends Model
     use HasFactory;
     protected $fillable=["title","name",'price',"description",'category_id'];  
 
+<<<<<<< HEAD
     
     public function category(){
         return $this->belongsTo(Category::class);
@@ -22,5 +23,12 @@ class Product extends Model
     public function orders()
     {
         return $this->belongsToMany(Order::class);
+=======
+    protected $fillable=["photo","name","price","description","user_id"];  
+    
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+>>>>>>> 91cb5a8219efa7a1c44acb8a51159a4964a41869
     }
 }
