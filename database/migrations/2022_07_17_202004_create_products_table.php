@@ -17,11 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("photo");
             $table->string("name");
-<<<<<<< HEAD
-            $table->float('price')->unsigned();
-=======
             $table->float("price")->unsigned();
->>>>>>> 91cb5a8219efa7a1c44acb8a51159a4964a41869
             $table->string("description");
             $table->timestamps();
         });
