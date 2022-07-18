@@ -11,4 +11,8 @@ class Category extends Model
         'name','photo'
     ];
     use HasFactory;
+    public function products()
+    {
+            return $this->hasMany(Product::class);
+    }
 }

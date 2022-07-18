@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Suggestion extends Model
 {
     protected $fillable = [
-        'body','photo'
+        'body','photo','user_id'
     ];
     use HasFactory;
+
+    public function user(){
+        return $this->belongsTo(User::class);
+}
 }
