@@ -54,6 +54,7 @@ class User extends Authenticatable
     }
 
 
+
     public function phones()
     {
         return $this->hasMany(Phone::class);
@@ -68,4 +69,5 @@ class User extends Authenticatable
     {
         return $this->hasOne(Cart::class);
     }
+
 }
