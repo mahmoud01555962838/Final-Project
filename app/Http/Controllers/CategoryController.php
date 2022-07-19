@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+         $categorys = Category::all();
+        return view("layout.navbar", [ "categorys" => $categorys]); 
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view("users.category.create");
     }
 
     /**
@@ -35,7 +37,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       Category::create($request->all());
+       return redirect('/categorys');
+      
     }
 
     /**
@@ -46,7 +50,9 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        
+      
+        return view('users.category.show',["category"=>$category]);
     }
 
     /**

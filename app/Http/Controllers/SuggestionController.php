@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Suggestion;
 use Illuminate\Http\Request;
 
+
 class SuggestionController extends Controller
 {
     /**
@@ -12,6 +13,10 @@ class SuggestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         //
@@ -24,7 +29,7 @@ class SuggestionController extends Controller
      */
     public function create()
     {
-        //
+        return view("users.suggest");
     }
 
     /**
@@ -35,7 +40,8 @@ class SuggestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Suggestion::create($request->all());
+        return response("done");
     }
 
     /**
