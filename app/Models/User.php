@@ -43,7 +43,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
     public function suggestions()
     {
             return $this->hasMany(Suggestion::class);
@@ -70,5 +69,4 @@ class User extends Authenticatable
     {
         return $this->hasOne(Cart::class);
     }
-
 }
