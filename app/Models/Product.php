@@ -11,6 +11,7 @@ class Product extends Model
     protected $fillable=["title","name",'price',"description",'category_id'];
 
 
+    
     public function category(){
         return $this->belongsTo(Category::class);
     }
@@ -25,6 +26,8 @@ class Product extends Model
     }
     // protected $fillable=["photo","name","price","description","user_id"];
 
+
+    
     public function carts()
     {
         return $this->hasMany(Cart::class);
