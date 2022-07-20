@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>تعديل ف المنتج</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/rtl.css')}}">
   </head>
   <body>
 <form method="POST" action="{{route("products.update",[$data->id])}}" enctype="multipart/form-data" >
@@ -24,7 +24,7 @@
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">السعر</label>
         <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="price" value="{{$data->price}}">
-        <label class="text-danger"> {{$errors->first("price")}} </label>  
+        <label class="text-danger"> {{$errors->first("price")}} </label>
     </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">الصوره</label>
