@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,9 +20,9 @@ class ProductFactory extends Factory
         return [
             "photo"=>$this->faker->imageUrl($width = 640, $height = 480 ,'cats'),
             "name"=>$this->faker->name(),
-            "price"=>$this->faker->randomFloat(),
+            "price"=>$this->faker->randomFloat(2,50,1000),
             "description"=>$this->faker->paragraph(),
-            "category_id"=>$this->faker->numberBetween(1,4),
+            "category_id"=>Category::factory(),
         ];
     }
 }

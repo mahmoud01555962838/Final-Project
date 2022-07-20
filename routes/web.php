@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,7 @@ Route::post("/store/suggest", [SuggestionController::class, "store"]);
 Route::post("/store/category", [CategoryController::class, "store"]);  */
 Route::resource('/categorys' , CategoryController::class);
 Route::get('products',[ProductController::class,"index"]);
+
+// Route::get('/make-admin',function(){
+//     return \App\Models\User::factory()->admin()->create();
+// });
