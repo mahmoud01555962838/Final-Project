@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ app()->getLocale() }}" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,18 +8,46 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="stylesheet" href="{{ asset('build/assets/rtl.css')}}">
     @vite('resources/js/app.js')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <style>
+     body{
+        background-color: #1AC0C6 !important;
+       }
+       .form-control {
+     border: 0!important;
+     border-bottom: 1px solid #FFA822 !important ;
+   }
+   button{
+    color: #134E6F;
+    border: none;
+    padding: 8px 75px!important;
+   margin: 8px 10px !important;
+   font-weight: bold;
+   font-size: 25px !important;
+   }
+   h1 {
+      color: #FFA822;
+      font-size: 80px !important;
+   }
+   a {
+    color:#0b669b !important;
+    font-weight: bold !important;
+   }
+
+       </style>
 </head>
-<body>
+<body >
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('هديتك', 'هديتك') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -37,13 +65,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li class="nav-item  ">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('التسجيل') }}</a>
                                 </li>
                             @endif
                         @else
@@ -70,7 +98,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-5" >
             @yield('content')
         </main>
     </div>

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
-            $table->integer("phone")->unique();
+            $table->integer("phone");
             $table->timestamps();
         });
     }
