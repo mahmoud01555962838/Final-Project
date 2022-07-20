@@ -16,7 +16,7 @@
   </div>
 </nav>
   <form class="d-flex justify-content-center gap-2 " dir="rtl">
-    <button class="btn btn-warning" type="submit">بحث|</button>
+    <button class="btn btn-warning fw-bold" type="submit">بحث</button>
     <input class="form-control me-3 w-50" type="search"  aria-label="Search">
 </form> 
   
