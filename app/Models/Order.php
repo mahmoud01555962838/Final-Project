@@ -7,22 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = [
-        'status', 'time_delivery','notes','photo','user_id'
-    ];
     use HasFactory;
+
+    protected $fillable = [
+        'status', 'time_delivery','notes','photo','user_id','address_id'
+    ];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
 
-    public function orderdetail()
-    {
-            return $this->hasOne(Orderdetail::class);
+    public function address(){
+        return $this->belongsTo(Address::class);
     }
 
-
-    public function products()
+    public function orderdetail()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->hasMany(Orderdetail::class);
     }
 }

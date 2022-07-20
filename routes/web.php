@@ -17,13 +17,15 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[ProductController::class,'index']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name('cart');
+
+Route::get('/order', [App\Http\Controllers\HomeController::class, 'order'])->name('order');
 
 
 Route::get("/create/suggest", [SuggestionController::class, "create"]);
@@ -33,7 +35,7 @@ Route::post("/store/suggest", [SuggestionController::class, "store"]);
 /*  Route::get("/create/category", [CategoryController::class, "create"]);
 Route::post("/store/category", [CategoryController::class, "store"]);  */
 Route::resource('/categorys' , CategoryController::class);
-Route::resource('/products',ProductController::class);
+Route::resource('/products',ProductController::class)->except('index');
 
 // Route::get('/make-admin',function(){
 //     return \App\Models\User::factory()->admin()->create();
