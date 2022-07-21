@@ -1,5 +1,5 @@
-@extends('layout.app')
-@section('content')
+@extends('master')
+@section("content")
     <div class="container"><h1 class="text-center">{{$category->name}}</h1></div>
     <div class="card-group" >
       @foreach($category->products as $data )
