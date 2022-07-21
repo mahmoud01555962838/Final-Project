@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Database\Factories\ProductFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,11 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory()->admin()->create([
+            'name' => 'Admin',
+            'email' => 'admin@app.com',
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $admins = [
+            'nadia',
+        ];
+
+        foreach ($admins as $name) {
+            \App\Models\User::factory()->admin()->create([
+                'name' => $name,
+                'email' => "{$name}@app.com",
+            ]);
+        }
+
+        $this->call(
+            ProductTableSeeder::class
+        );
     }
 }

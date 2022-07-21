@@ -18,7 +18,11 @@ return new class extends Migration
             $table->float('price')->unsigned();
             $table->integer('quantity');
             $table->string('color');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('product_id');
             $table->timestamps();
+            $table->foreign("order_id")->references("id")->on("orders")->onDelete('cascade');
+            $table->foreign("product_id")->references("id")->on("products")->onDelete('cascade');
         });
     }
 

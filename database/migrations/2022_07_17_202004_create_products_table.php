@@ -18,8 +18,10 @@ return new class extends Migration
             $table->string("photo");
             $table->string("name");
             $table->float("price")->unsigned();
-            $table->string("description");
+            $table->text("description");
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
+            $table->foreign("category_id")->references("id")->on("categories")->onDelete('cascade');
         });
     }
 

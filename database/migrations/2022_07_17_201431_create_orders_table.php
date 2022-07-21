@@ -19,7 +19,11 @@ return new class extends Migration
             $table->dateTime('time_delivery');
             $table->longText('notes');
             $table->string('photo');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('address_id');
             $table->timestamps();
+            $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
+            $table->foreign("address_id")->references("id")->on("addresses")->onDelete('cascade');
         });
     }
 
