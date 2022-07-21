@@ -70,8 +70,9 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->save();
      
-        return redirect()->route('products.index')
-                        ->with('success','تمت اضافه المنتج');
+        return redirect('/');
+        // ->route('/')
+        //                 ->with('success','تمت اضافه المنتج');
     }
 
     /**
@@ -131,12 +132,13 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        // $product->photo = $path;
-        $product->photo = $request->photo;
+        $product->photo = $path;
+        // $product->photo = $request->photo;
         $product->category_id = $request->category_id;
     $product->save();
-    return redirect()->route('products.index')
-                    ->with('success','تم تعديل المنتج');
+    return redirect('/');
+    // ->route('products.index')
+    //                 ->with('success','تم تعديل المنتج');
     }
 
     /**

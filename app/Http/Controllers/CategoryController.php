@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
          $categorys = Category::all();
-        return view("layout.navbar", [ "categorys" => $categorys]); 
+        return view("users.category.allcategory", [ "categorys" => $categorys]); 
     }
 
     /**
@@ -37,8 +37,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required | min:4',
+        ]);
        Category::create($request->all());
-       return redirect('/categorys');
+       return redirect('/');
       
     }
 
@@ -63,7 +66,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view("users.category.edit",["data"=> $category]);
+
     }
 
     /**
@@ -75,7 +79,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->update($request->all());
+      return redirect('/');
+    //   ->route("");
     }
 
     /**
@@ -86,6 +92,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+       return redirect('/');
+    //    ->route("products.index")
     }
 }

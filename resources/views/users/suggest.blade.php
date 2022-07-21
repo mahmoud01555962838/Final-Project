@@ -1,19 +1,12 @@
-<!doctype html>
-<html dir="rtl" lang="ar">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>مقترحاتك</title>
-    <link rel="stylesheet" href="{{ asset('css/rtl.css')}}">
-  </head>
-  <body>
+@extends('master')
+@section("content")
 
     <div class="container" style="background: #FFF9F9">
         <h1 class="fw-bold text-center mb-3" style="color:#FFA822"> هديتك </h1>
         <div class="text-center mb-3">يسر موقع هديتك ان تقدم له مقترحات للوصول الي الافضل</div>
          <h3 class="fw-bold text-center mb-2" style="color:#FFA822">ارسال المقترح</h3>
 
-         <form method="post" action="/store/suggest">
+         <form method="post" action="{{route('suggests.store')}}" enctype="multipart/form-data" >
              @csrf
           <div class="mb-3">
             <label for="body" class="form-label fs-2" style="color:#FFA822"> مقترحاتك </label>
@@ -29,6 +22,5 @@
         </form>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  </body>
-</html>
+   
+@endsection

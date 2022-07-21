@@ -1,5 +1,5 @@
 
-<div class=" my-5 "  dir="rtl">
+<div class=" mt-5 "  dir="rtl">
     <footer
             class="text-center text-white"
             style="background-color:black"
@@ -9,12 +9,12 @@
         <section class="">
           <div class="row">
             <hr class="w-100 clearfix d-md-none" />
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 fs-2 ">
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 fs-4 ">
               <p>
-                <a class="text-white">تواصل معنا</a>
+                <a class="text-white" href="/">الصفحه الرئيسيه</a>
               </p>
               <p>
-                <a class="text-white">عنا</a>
+                <a class="text-white" href="/aboutus">عنا</a>
               </p>
               <p>
                 <a class="text-white">اقتراحات أفكار جديدة</a>
@@ -27,7 +27,7 @@
             <hr class="w-100 clearfix d-md-none" />
   
             <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 fs-2">
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 fs-3">
               <h4 class=" mb-4 font-weight-bold ">التواصل</h4>
               <p><i class="fas fa-phone mr-3"></i> + 01 234 567 89</p>
               <p><i class="fas fa-envelope mr-3"></i>team@team.com</p>
@@ -78,8 +78,8 @@
         </section>
       </div>
       <div
-           class="text-center p-3"
-           style="background-color: rgba(0, 0, 0, 0.2)"
+           class="text-center p-3 fs-3"
+           style="background-color:white; color:black"
            >
         © 2022 جميع الحقوق محفوظة "هديتك"
       </div>

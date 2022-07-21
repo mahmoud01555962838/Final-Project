@@ -1,12 +1,5 @@
-<!doctype html>
-<html dir="rtl" lang="ar">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>تعديل ف المنتج</title>
-    <link rel="stylesheet" href="{{ asset('css/rtl.css')}}">
-  </head>
-  <body>
+@extends('master')
+@section("content")
 <form method="POST" action="{{route("products.update",[$data->id])}}" enctype="multipart/form-data" >
     @method('PUT')
     @csrf
@@ -55,3 +48,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
+@endsection
