@@ -40,8 +40,11 @@ class SuggestionController extends Controller
      */
     public function store(Request $request)
     {
+        $suggestion=new Suggestion;
+        $suggestion->user_id=auth()->user()->id;
         Suggestion::create($request->all());
-        return response("done");
+       // $suggestion->user_id=auth()->user()->id;
+       // return response("done");
     }
 
     /**

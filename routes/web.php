@@ -28,8 +28,8 @@ Route::get('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name(
 Route::get('/order', [App\Http\Controllers\HomeController::class, 'order'])->name('order');
 
 
-// Route::get("/suggest", [SuggestionController::class, "create"]);
-// Route::post("/store/suggest", [SuggestionController::class, "store"]);
+ //Route::get("/suggest", [SuggestionController::class, "create"]);
+//Route::post("/store/suggest", [SuggestionController::class, "store"]);
 Route::resource('/suggest' , SuggestionController::class);
 
 /*  Route::get("/create/category", [CategoryController::class, "create"]);

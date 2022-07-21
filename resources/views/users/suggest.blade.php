@@ -6,7 +6,7 @@
         <div class="text-center mb-3">يسر موقع هديتك ان تقدم له مقترحات للوصول الي الافضل</div>
          <h3 class="fw-bold text-center mb-2" style="color:#FFA822">ارسال المقترح</h3>
 
-         <form method="post" action="{{route('suggests.store')}}" enctype="multipart/form-data" >
+         <form method="post" action="{{route('suggest.store')}}" enctype="multipart/form-data" >
              @csrf
           <div class="mb-3">
             <label for="body" class="form-label fs-2" style="color:#FFA822"> مقترحاتك </label>

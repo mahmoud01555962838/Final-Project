@@ -13,8 +13,8 @@
                 <p class="card-text">{{$data->description}}</p>
                 <p class="card-text text-muted">{{$data->price}} EGP </p>
             </div>
-        </div>
+      </div>
 @endforeach
-<div>
+        </div>
 
 @endsection
