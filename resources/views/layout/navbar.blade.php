@@ -148,7 +148,7 @@
     </div>
   </nav>
   </div>
-{{--       --}}
+{{--   < h1 >  --}}
   <div class="row d-flex justify-content-center text-center m-3" style="background-color:#D9D2D2">
     <nav class="navbar col-12">
       <div class="container">
