@@ -147,11 +147,11 @@
   </nav>
   </div>
 
-  <div class="row d-flex justify-content-center text-center " style="background-color:#D9D2D2">
+  <div class="row d-flex justify-content-center text-center m-3" style="background-color:#D9D2D2">
     <nav class="navbar col-12">
       <div class="container">
         @foreach(\App\Models\Category::all() as $data)
-        <a class="nav-link text-black fs-3" href="categorys/{{$data->id}}">{{$data->name}}</a>
+        <a class="nav-link text-black fs-3" href="{{route("categorys.show",[$data->id])}}">{{$data->name}}</a>
         @endforeach
       </div>
     </nav>
