@@ -136,7 +136,9 @@
       </div>
     </div>
   </nav>
-  <div class="row d-flex justify-content-center text-center" style="background-color:#D9D2D2">
+
+
+  <div class="row d-flex justify-content-center text-center container mt-2 " style=" margin: auto">
   <nav class="navbar col-4">
     <div class="container fluid">
       <form class="d-flex" role="search">
