@@ -16,7 +16,10 @@ class ProductController extends Controller
     public function index()
     {
             $products=Product::all();
-            return view("products.index",["products" => $products]);
+            $cat=Category::find(1);
+            $cat2=Category::find(2);
+            return view("products.index",["products" => $products, "cat" =>$cat ,"cat2" =>$cat2]);
+
 
     }
 
@@ -83,7 +86,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        
+        $catrel=Category::all();
         return view("users.product.showProduct",["data"=>$product]);
     }
 

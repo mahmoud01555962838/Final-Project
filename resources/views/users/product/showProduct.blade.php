@@ -1,6 +1,6 @@
 @extends('master')
 @section("content")
-    <div class="container">
+{{--     <div class="container">
         <div class="row py-5">
             <div class="col-md-7  py-5">
                 <label style="color: #FFA822" class="fs-2">اسم المنتج:</label>
@@ -19,5 +19,89 @@
 
         </div>
     </div>
+</div> --}}
+    <link rel="stylesheet" href="{{ asset('css/showproduct.css') }}">
+
+<div class="container mt-5 ">
+
+    <!-- Portfolio Item Heading -->
+
+
+  {{--   <h1 class="my-4">Page Heading
+      
+    </h1> --}}
+  
+    <!-- Portfolio Item Row -->
+    <div class="row">
+        <div class="container mt-5 mb-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="images p-3">
+                                    <div class="text-center p-4"> <img id="main-image" src="{{Storage::url($data->photo)}}" width="250" /> </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product p-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center"> <a class="text-decoration-none text-black" href="{{ url('/') }}"><i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span></a> </div> 
+                                    </div>
+                                    <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">Orianz</span>
+                                        <h5 class="text-uppercase">{{$data->name}}</h5>
+                                        <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$data->price}}EGP</span>
+                                        </div>
+                                    </div>
+                                    <p class="about">{{$data->description}}.</p>
+                                    <div class="sizes mt-5">
+                                        <h6 class="text-uppercase">Size</h6> <label class="radio"> <input type="radio" name="size" value="S" checked> <span>S</span> </label> <label class="radio"> <input type="radio" name="size" value="M"> <span>M</span> </label> <label class="radio"> <input type="radio" name="size" value="L"> <span>L</span> </label> <label class="radio"> <input type="radio" name="size" value="XL"> <span>XL</span> </label> <label class="radio"> <input type="radio" name="size" value="XXL"> <span>XXL</span> </label>
+                                    </div>
+                                    <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+    <!-- Related Projects Row -->
+    <h3 class="my-4">Related Product</h3>
+  
+    <div class="row">
+    
+        
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="#">
+              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+            </a>
+      </div>
+
+    </div> 
+    
 </div>
+
+
+  </div>
+
 @endsection

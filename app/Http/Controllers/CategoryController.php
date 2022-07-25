@@ -96,4 +96,12 @@ class CategoryController extends Controller
        return redirect('/');
     //    ->route("products.index")
     }
+
+    public function category1(){
+        $category1=DB::table('categories')
+        ->where([
+            ['id', '=', '1']
+        ])->get();
+        return redirect('products.index', ['category1'=>$category1]);
+    } 
 }
