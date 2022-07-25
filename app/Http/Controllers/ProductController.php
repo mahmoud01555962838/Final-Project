@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+
+
 class ProductController extends Controller
 {
     /**
@@ -15,6 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+
             $products=Product::all();
             return view("products.index",["products" => $products]);
 
@@ -69,7 +72,7 @@ class ProductController extends Controller
         $product->photo = $path;
         $product->category_id = $request->category_id;
         $product->save();
-     
+
         return redirect('/');
         // ->route('/')
         //                 ->with('success','تمت اضافه المنتج');
@@ -83,7 +86,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        
+
         return view("users.product.showProduct",["data"=>$product]);
     }
 
@@ -118,9 +121,9 @@ class ProductController extends Controller
             'description' => 'required | min:30',
             'price' => 'required|numeric ',
             // 'photo' => 'required|image|mimes:jpg,png,jpeg|max:2048'
-        
+
     ]);
-  
+
     $product = Product::find($id);
     if($request->hasFile('photo')){
         $request->validate([
@@ -151,5 +154,8 @@ class ProductController extends Controller
     {
         $product->delete();
        return redirect()->route("products.index");
+    }
+    function cart (Request $request){
+         return "Hello" ;
     }
 }

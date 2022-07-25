@@ -53,30 +53,30 @@
             </button>
           </div>
     </div>
- 
+
         </div> --}}
-        
+
      {{--    <div class="text-center">
             <img src="{{Storage::url($dataphoto->photo)}}" class="rounded" alt="...">
           </div> --}}
 
   {{--       <div class="card mt-5" >
           <div class="card-body" > --}}
-         {{-- 
+         {{--
           @foreach(\App\Models\Category::all() as $data)
           <div class="container row">
           <h2 class="fs-3 m-5">{{$data->name}}</h2>
 
           <div class="carousel" data-flickity>
             @foreach($data->products as $dataphoto)
-          
+
                 <a href="{{route("products.show",[$dataphoto->id])}}">
                   <img class="rounded-4 m-5" src="{{Storage::url($dataphoto->photo)}}" alt="ramez" style="height: 200px">
                 </a>
-            
+
               @endforeach
-            </div>                                                    
-         
+            </div>
+
         </div>
         @endforeach
         </div>
@@ -85,6 +85,8 @@
 </div>
 @endsection
  --}}
+
+ 
 
 @extends('master')
 @section("content")
@@ -109,9 +111,9 @@
             </button>
           {{-- </div> --}}
     </div>
- 
+
         </div>
-        
+
         <div class="card mt-5 container" >
           <div class="card-body" >
           @foreach(\App\Models\Category::all() as $data)
@@ -122,7 +124,7 @@
           @foreach($data->products as $dataphoto)
               <div class="col-md-2 w-30 ">
                 <a href="{{route("products.show",[$dataphoto->id])}}">
-                  <img class="w-100 rounded-4" src="{{Storage::url($dataphoto->photo)}}" alt="ramez">
+                  <img class="w-100 rounded-4" src="{{Storage::url($dataphoto->photo)}}" alt="img">
                 </a>
               </div>
               @endforeach

@@ -23,7 +23,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name('cart');
+Route::post('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name('cart');
 
 Route::get('/order', [App\Http\Controllers\HomeController::class, 'order'])->name('order');
 

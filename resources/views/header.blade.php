@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light" >
   <div class="container-fluid" style="background-color:#1ac0c6">
     <a class="navbar-brand text-warning ms-5" href="#"><i class="fa-solid fa-gift fa-2xl fa-beat"></i>  هديتك</a>
@@ -8,7 +10,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href=""><i class="fa-solid fa-cart-shopping fa-2x text-success"></i></a></li>     
+        <li><a href=""><i class="fa-solid fa-cart-shopping fa-2x text-success"></i></a></li>
         <li><a href="{{ route('register') }}" style="color:#ffa822;font-size:20px">تسجيل  |</a></li>
         <li><a href="{{ route('login') }}" style="color:#000000;font-size:20px;margin-left:5px">تسجيل الدخول </a></li>
       </ul>
@@ -18,8 +20,8 @@
   <form class="d-flex justify-content-center gap-2 " dir="rtl">
     <button class="btn btn-warning fw-bold" type="submit">بحث</button>
     <input class="form-control me-3 w-50" type="search"  aria-label="Search">
-</form> 
-  
+</form>
+
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center mt-4">
