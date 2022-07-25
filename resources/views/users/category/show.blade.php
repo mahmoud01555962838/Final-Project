@@ -18,30 +18,10 @@
 <hr>
 <div class="me-3">
   <h2 style="color: #FF6F61" class="mt-3">السعر</h2>
-  
-    <div class="form-check">
-      <label for="$data->id">
-        <a class="text-decoration-none text-black" href="#" ><input type="radio" id="$data->id"> من 10 الي 20 EGY</a>
-   </label>
-  </div>
-  
-  <div class="form-check">
-    <label for="$data->id">
-      <a class="text-decoration-none text-black" href="#" ><input type="radio" id="$data->id"> من 10 الي 20 EGY</a>
- </label>
-</div>
  
-<div class="form-check">
-  <label for="$data->id">
-    <a class="text-decoration-none text-black" href="#" ><input type="radio" id="$data->id"> من 10 الي 20 EGY</a>
-</label>
-</div>
- 
-<div class="form-check">
-  <label for="$data->id">
-    <a class="text-decoration-none text-black" href="#" ><input type="radio" id="$data->id"> من 10 الي 20 EGY</a>
-</label>
-</div>
+  <a class="text-decoration-none " href="{{route("filter1",[$category->id])}}" >اقل من 50 </a><br>
+  <a class="text-decoration-none " href="{{route("filter2",[$category->id])}}" > من 50 الي 100 EGY</a><br>
+  <a class="text-decoration-none " href="{{route("filter3",[$category->id])}}" >اكثر من 100 EGY</a> 
 </div>
   
   </div>
