@@ -157,4 +157,41 @@ class ProductController extends Controller
     }
 
 
+    public function search(Request $req)
+    {
+        $data= Product::
+        where('name', 'like', '%'.$req->input('query').'%')
+        ->get();
+        return view('search',['products'=>$data]);
+    }
+
+    public function filter1()
+    {
+        $data=Product::
+        whereBetween('price', [0, 50])
+        ->get();
+
+        return view('filter',['products'=>$data]);
+
+    }
+
+    public function filter2()
+    {
+        $data=Product::
+        whereBetween('price', [50, 100])
+        ->get();
+
+        return view('filter',['products'=>$data]);
+
+    }
+
+    public function filter3()
+    {
+        $data=Product::
+        whereBetween('price', [100, 1000000])
+        ->get();
+
+        return view('filter',['products'=>$data]);
+
+    }
 }

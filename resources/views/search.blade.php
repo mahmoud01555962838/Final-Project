@@ -1,15 +1,8 @@
-<div class="custom-product">
-     <div class="col-sm-4">
-        <div class="trending-wrapper">
-            @foreach($products as $item)
-            <div class="searched-item">
-              <img class="trending-image" src="{{$item['photo']}}">
-              <div class="">
-                <h2>{{$item['name']}}</h2>
-                <h5>{{$item['description']}}</h5>
-              </div>
-            </div>
-            @endforeach
-          </div>
-     </div>
+@extends('master')
+@section("content")
+<div class="carousel" data-flickity>
+          @foreach ($products as $item)
+          <a href="{{route("products.show",[$item->id])}}"><img class="carousel-cell" src="{{Storage::url($item->photo)}}"/></a>
+          @endforeach
 </div>
+@endsection

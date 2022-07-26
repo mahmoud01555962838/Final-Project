@@ -57,8 +57,9 @@
     </div>
   </nav>
 
-  <form class="input-group rounded container mt-4 mb-3">
-    <input type="search" class="form-control rounded" placeholder="بحث بالمنتج" aria-label="Search" aria-describedby="search-addon" style="height: 3rem" />
+  <form class="input-group rounded container mt-4 mb-3" method="get" action="{{route("search")}}">
+    @csrf
+    <input type="search" class="form-control rounded" name="query"  placeholder="بحث بالمنتج" aria-label="Search" aria-describedby="search-addon" style="height: 3rem" />
     <button class="input-group-text border-0 " id="search-addon" >
       <i class="fas fa-search" ></i>
   </button>
