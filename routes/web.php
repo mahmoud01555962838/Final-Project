@@ -39,7 +39,7 @@ Route::resource('/categorys' , CategoryController::class);
 Route::resource('/products',ProductController::class)->except('index');
 Route::get('/aboutus',function(){
     return view('aboutus');
-});
+})->name('aboutus');
 // Route::get('/make-admin',function(){
 //     return \App\Models\User::factory()->admin()->create();
 // });

@@ -75,31 +75,17 @@
     <h3 class="my-4">Related Product</h3>
 
     <div class="row">
+        @foreach ($related as $item)
+        {{-- <h5>{{ $item->name }}</h5>
+        <p>{{ $item->description }}</p> --}}
 
 
       <div class="col-md-3 col-sm-6 mb-4">
         <a href="#">
-              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+              <img class="img-fluid" src="{{\Storage::url($item->photo)}}" alt="">
             </a>
       </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <a href="#">
-              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-            </a>
-      </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <a href="#">
-              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-            </a>
-      </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <a href="#">
-              <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-            </a>
-      </div>
+      @endforeach
 
     </div>
 

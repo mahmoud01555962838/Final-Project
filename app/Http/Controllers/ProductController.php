@@ -72,7 +72,7 @@ class ProductController extends Controller
         $product->photo = $path;
         $product->category_id = $request->category_id;
         $product->save();
-
+     
         return redirect('/');
         // ->route('/')
         //                 ->with('success','تمت اضافه المنتج');
@@ -86,8 +86,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        $catrel=Category::all();
-        return view("users.product.showProduct",["data"=>$product]);
+        // $catrel=Category::all();
+        $related = $product->relatedProducts(4, true)->with('category')->get();
+        return view("users.product.showProduct",["data"=>$product,"related"=>$related]);
     }
 
     /**
@@ -121,9 +122,9 @@ class ProductController extends Controller
             'description' => 'required | min:30',
             'price' => 'required|numeric ',
             // 'photo' => 'required|image|mimes:jpg,png,jpeg|max:2048'
-
+        
     ]);
-
+  
     $product = Product::find($id);
     if($request->hasFile('photo')){
         $request->validate([

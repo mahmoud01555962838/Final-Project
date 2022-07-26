@@ -1,6 +1,7 @@
+
 @extends('master')
 @section("content")
-
+@can('isAdmin')
 <form method="POST" action="{{route('products.store')}}" enctype="multipart/form-data" >
     @csrf
     <div class="container">
@@ -43,4 +44,16 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </div>
   </form>
+  @else
+  
+ {{--  @extends('notfound') --}}
+
+  <div class="container text-center">
+    <img src="{{ asset('images/oops.jpg') }}"><br><br>
+<h2 class="text-secondary">the page is not found</h2>
+<p class="fs-4">ان كنت تريد شئ اخر تستطيع <a class="fs-4 text-decoration-none" href="{{route('aboutus')}}">تواصل معنا</a></p>
+</div> 
+ 
+  
+  @endcan
   @endsection
