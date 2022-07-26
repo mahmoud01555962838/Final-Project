@@ -47,11 +47,11 @@ background: #f3f6ff; ">
           @endforeach
         </ul>
       </div>
-</div> 
-</div> 
+</div>
+</div>
 
-      <!-- Feature End-->      
-      
+      <!-- Feature End-->
+
 {{-- --category-- --}}
 <div class="category">
   <div class="container">
@@ -70,7 +70,7 @@ background: #f3f6ff; ">
             <div class="category-item ch-400">
                 <img src="{{ asset('images/tara.jpg') }}" />
                 <div class="category-name" >
-                   
+
                     <a href="categorys/{{5}}" class="btn btn-info mx-auto">تسوق الان</a>
                 </div>
             </div>
@@ -83,14 +83,14 @@ background: #f3f6ff; ">
               </div>
           </div>
       </div>
-      
-  
+
+
       </div>
   </div>
 </div>
-<!-- Category End-->      
+<!-- Category End-->
 
-{{-- 
+{{--
       <div class="card mt-5 container" >
         <div class="card-body" >
         @foreach(\App\Models\Category::all() as $data)
@@ -109,14 +109,14 @@ background: #f3f6ff; ">
         @endforeach
       </div>
       </div>  --}}
-      
+
       <section >
         <div class="text-center container py-5">
-          <h2 class="mt-4 mb-5 fs-1"><strong class="justify-content-end"> {{$cat->name}} </strong></h2>
-      
+          <h2 class="mt-4 mb-5 fs-1"><strong class="justify-content-end"> {{$cat?->name}} </strong></h2>
+
           <div class="row">
 
-            @foreach($cat->products as $data )
+            @foreach($cat?->products ?? [] as $data )
 
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card">
@@ -125,34 +125,34 @@ background: #f3f6ff; ">
                   <img src="{{Storage::url($data->photo)}}"
                     class="w-100" style="height: 15rem" />
                   <a href="#!">
-               
+
                     <div class="hover-overlay">
                       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                     </div>
                   </a>
                 </div>
                 <div class="card-body">
-                  
+
                     <h4 class="card-title mb-3">{{$data->name}}</h4>
-                 
-    
-                  
+
+
+
                   <h5 class="mb-3">{{$data->price}}EGP</h5>
-                   <div class="d-grid gap-2 col-6 mx-auto"> 
+                   <div class="d-grid gap-2 col-6 mx-auto">
                   <a href="{{route("products.show",[$data->id])}}" class="btn fs-4" style="background-color: black ; color: #FF6F61">التفاصيل</a>
                   <a href="" class="btn fs-4" style="background-color: #FF6F61">اضف الي السله</a>
-                </div> 
+                </div>
                 </div>
               </div>
             </div>
             @endforeach
           </div>
-      
+
 
         </div>
       </section>
 
-      
+
         <!-- Feature Start-->
         <div class="feature m-4 " style="position: relative;">
           <div class="container">
@@ -228,11 +228,11 @@ background: #f3f6ff; ">
 
       <section style="background-color: #eee;">
         <div class="text-center container py-5">
-          <h2 class="mt-4 mb-5 fs-1"><strong class="justify-content-end"> {{$cat2->name}} </strong></h2>
-      
+          <h2 class="mt-4 mb-5 fs-1"><strong class="justify-content-end"> {{$cat2?->name}} </strong></h2>
+
           <div class="row">
 
-            @foreach($cat2->products as $data )
+            @foreach($cat2?->products ?? [] as $data )
 
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card">
@@ -241,33 +241,33 @@ background: #f3f6ff; ">
                   <img src="{{Storage::url($data->photo)}}"
                     class="w-100" style="height: 15rem" />
                   <a href="#!">
-               
+
                     <div class="hover-overlay">
                       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                     </div>
                   </a>
                 </div>
                 <div class="card-body">
-                  
+
                     <h4 class="card-title mb-3">{{$data->name}}</h4>
-                 
-    
-                  
+
+
+
                   <h5 class="mb-3">{{$data->price}}EGP</h5>
-                   <div class="d-grid gap-2 col-6 mx-auto"> 
+                   <div class="d-grid gap-2 col-6 mx-auto">
                   <a href="{{route("products.show",[$data->id])}}" class="btn fs-4" style="background-color: black ; color: #FF6F61">التفاصيل</a>
                   <a href="" class="btn fs-4" style="background-color: #FF6F61">اضف الي السله</a>
-                </div> 
+                </div>
                 </div>
               </div>
             </div>
             @endforeach
           </div>
-      
+
 
         </div>
       </section>
       <div>
-       
+
       </div>
 @endsection
