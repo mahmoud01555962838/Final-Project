@@ -1,5 +1,5 @@
 
-  
+
 <nav class="navbar navbar-expand-lg p-2 mb-6" style="background: #FF6F61;">
     <div class="container">
       <a class="navbar-brand fs-1" style="color: black" href="{{ url('/') }}">{{ config('app.name') }}</a>
@@ -43,7 +43,7 @@
                                             document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-
+                        
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
@@ -65,7 +65,7 @@
   </form>
  {{--  <div class="row d-flex justify-content-center text-center container" >
   <nav class="navbar col-4"> --}}
-   
+
      {{--  <div class="form-outline mb-4">
         <input type="search" class="form-control" id="datatable-search-input">
         <label class="form-label" for="datatable-search-input">Search</label>
@@ -74,7 +74,7 @@
         <input class="form-control me-2" type="search" placeholder="بحث بالمنتج" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> --}}
-    
+
   {{-- </nav>
   </div>  --}}
 

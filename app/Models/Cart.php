@@ -9,15 +9,20 @@ class Cart extends Model
 {
     use HasFactory;
 
-    protected $fillable=["qty","product_id","color","user_id"];
+    protected $fillable=["qty","product_id","size","user_id"];
+    protected $attributes = ['qty'=>1];
 
     public function product()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class,'product_id');
     }
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
 
+    public function total()
+    {
+        return $this->qty * $this->product->price;
+    }
 }

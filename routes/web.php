@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SuggestionController;
@@ -21,11 +22,11 @@ Route::get('/',[ProductController::class,'index'])->name('home1');;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name('cart');
-
-Route::get('/order', [App\Http\Controllers\HomeController::class, 'order'])->name('order');
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('add-to-cart/{id}', [CartController::class, 'store'])->name('add_to_cart');
+Route::get('/order', [\App\Http\Controllers\HomeController::class, 'order'])->name('order');
 
 
  //Route::get("/suggest", [SuggestionController::class, "create"]);

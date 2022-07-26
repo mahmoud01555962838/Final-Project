@@ -7,24 +7,27 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
+        $user = $request->user();
+        $carts = $user->carts()->with('product')->get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('cart',compact('carts'));
     }
 
     /**
@@ -33,31 +36,26 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(int $id,Request $request)
     {
-        //
-    }
+        $cart = Cart::query()->updateOrCreate([
+            'user_id'=>$request->user()->id,
+            'product_id'=>$id,
+            'size'=>$request->get('size'),
+        ],[
+           'qty'=>(int)$request->get('qty',1),
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Cart $cart)
-    {
-        //
-    }
+        if($cart->qty <= 0 ) {
+            $cart->delete();
+            return $request->wantsJson() ? response()->json([
+                "status"=>true
+            ]) : back()->with('status','deleted successfully');
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Cart $cart)
-    {
-        //
+        return $request->wantsJson() ? response()->json([
+            "status"=>true
+        ]) : back()->with('status','deleted successfully');
     }
 
     /**

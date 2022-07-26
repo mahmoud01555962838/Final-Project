@@ -72,7 +72,7 @@ class ProductController extends Controller
         $product->photo = $path;
         $product->category_id = $request->category_id;
         $product->save();
-     
+
         return redirect('/');
         // ->route('/')
         //                 ->with('success','تمت اضافه المنتج');
@@ -121,9 +121,9 @@ class ProductController extends Controller
             'description' => 'required | min:30',
             'price' => 'required|numeric ',
             // 'photo' => 'required|image|mimes:jpg,png,jpeg|max:2048'
-        
+
     ]);
-  
+
     $product = Product::find($id);
     if($request->hasFile('photo')){
         $request->validate([
@@ -155,4 +155,6 @@ class ProductController extends Controller
         $product->delete();
        return redirect()->route("products.index");
     }
+
+
 }
