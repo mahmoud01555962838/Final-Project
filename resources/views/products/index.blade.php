@@ -140,7 +140,7 @@ background: #f3f6ff; ">
                   <h5 class="mb-3">{{$data->price}}EGP</h5>
                    <div class="d-grid gap-2 col-6 mx-auto">
                   <a href="{{route("products.show",[$data->id])}}" class="btn fs-4" style="background-color: black ; color: #FF6F61">التفاصيل</a>
-                  <a href="" class="btn fs-4" style="background-color: #FF6F61">اضف الي السله</a>
+                  <!-- <a href="" class="btn fs-4" style="background-color: #FF6F61">اضف الي السله</a> -->
                 </div>
                 </div>
               </div>
@@ -257,7 +257,7 @@ background: #f3f6ff; ">
                   <h5 class="mb-3">{{$data->price}}EGP</h5>
                    <div class="d-grid gap-2 col-6 mx-auto">
                   <a href="{{route("products.show",[$data->id])}}" class="btn fs-4" style="background-color: black ; color: #FF6F61">التفاصيل</a>
-                  <a href="" class="btn fs-4" style="background-color: #FF6F61">اضف الي السله</a>
+                  <!-- <a href="" class="btn fs-4" style="background-color: #FF6F61">اضف الي السله</a> -->
                 </div>
                 </div>
               </div>
