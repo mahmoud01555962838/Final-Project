@@ -19,13 +19,13 @@ background: #f3f6ff; ">
         <div id="carouselExampleControls" class="carousel slide col-7 " data-bs-ride="carousel">
           <div class="carousel-inner ">
             <div class="carousel-item active">
-              <img src="{{ asset('images/slider3.jpg') }}" class="d-block w-100 m-3" style="height: 29rem" alt="...">
+              <img src="{{ asset('images/loving-husband-closing-eyes-wife-presenting-romantic-surprise-gift_1163-4812.jpg') }}" class="d-block w-100 m-3" style="height: 29rem" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="{{ asset('images/giftflower1.jpg') }}" class="d-block w-100 m-3" style="height: 29rem" alt="...">
+              <img src="{{ asset('images/images (4).jpg') }}" class="d-block w-100 m-3" style="height: 29rem" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="{{ asset('images/handmade1.jpg') }}" class="d-block w-100 m-3" style="height: 29rem" alt="...">
+              <img src="{{ asset('images/gift1.jpg') }}" class="d-block w-100 m-3" style="height: 29rem" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -53,33 +53,33 @@ background: #f3f6ff; ">
       <!-- Feature End-->
 
 {{-- --category-- --}}
-<div class="category">
+<div class="category mt-5">
   <div class="container">
       <div class="row">
           <div class="col-md-4">
               <div class="category-item ch-400">
-                  <img src="{{ asset('images/handmade1.jpg') }}" />
+                  <img src="{{ asset('images/imagesromantic.jpg') }}" />
                   <div class="category-name">
 
                      {{--  <p>{{$category->name}}</p> --}}
-                      <a href="categorys/{{4}}" class="btn btn-info mx-auto">تسوق الان</a>
+                      <a href="categorys/{{3}}" class="btn btn-info mx-auto">تسوق الان</a>
                   </div>
               </div>
           </div>
           <div class="col-md-4">
             <div class="category-item ch-400">
-                <img src="{{ asset('images/tara.jpg') }}" />
+                <img src="{{ asset('images/images (10).jpg') }}" />
                 <div class="category-name" >
 
-                    <a href="categorys/{{5}}" class="btn btn-info mx-auto">تسوق الان</a>
+                    <a href="categorys/{{4}}" class="btn btn-info mx-auto">تسوق الان</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
           <div class="category-item ch-400">
-              <img src="{{ asset('images/images.jpg') }}" />
+              <img src="{{ asset('images/images (8).jpg') }}" />
               <div class="category-name">
-                  <a href="categorys/{{3}}" class="btn btn-info mx-auto">تسوق الان</a>
+                  <a href="categorys/{{5}}" class="btn btn-info mx-auto">تسوق الان</a>
               </div>
           </div>
       </div>

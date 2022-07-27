@@ -116,7 +116,8 @@
   
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h3 class="text-uppercase mb-4 font-weight-bold">الفئه</h3>
+              <h3 class=" text-uppercase mb-4 font-weight-bold ">
+              <a href="/" class="text-white text-decoration-none">الصفحه الرئيسيه</a></h3>
               @foreach(\App\Models\Category::all() as $data)
               <p class="fs-5">
                 <a href="{{route("categorys.show",[$data->id])}}" class="text-white text-decoration-none">{{$data->name}}</a>
