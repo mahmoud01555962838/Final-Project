@@ -16,7 +16,7 @@
        <label class="text-danger">{{$errors->first("name")}}</label>
      </div>
 
-     <button type="submit" class="btn btn-primary">حفظ</button>
+     <button type="submit" class="btn btn-primary">اضف</button>
    </form>
     </div>
 </div>

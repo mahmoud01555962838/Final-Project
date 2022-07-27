@@ -2,9 +2,11 @@
 @section("content")
 @can('isAdmin')
 <form method="POST" action="{{route("products.update",[$data->id])}}" enctype="multipart/form-data" >
+<div class="card container ">
     @method('PUT')
     @csrf
-    <div class="container">
+    <div class="m-5">
+      <h2 class=" fw-bold text-center" style="color:#FFA822">تعديل منتج</h2>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">اسم المنتج</label>
       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" value="{{$data->name}}">
@@ -43,7 +45,8 @@
             </div>
         @endif
     </div>
-    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="submit" class="btn btn-primary">تعديل</button>
+    </div>
     </div>
   </form>
   @else

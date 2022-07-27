@@ -119,7 +119,7 @@
               <h3 class="text-uppercase mb-4 font-weight-bold">الفئه</h3>
               @foreach(\App\Models\Category::all() as $data)
               <p class="fs-5">
-                <a href="categorys/{{$data->id}}" class="text-white text-decoration-none">{{$data->name}}</a>
+                <a href="{{route("categorys.show",[$data->id])}}" class="text-white text-decoration-none">{{$data->name}}</a>
               </p>
 @endforeach
             </div>
