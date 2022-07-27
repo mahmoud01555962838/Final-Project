@@ -167,10 +167,11 @@ background: #f3f6ff; ">
                           <i class="fab fa-cc-mastercard" style="    color: #FF6F61;
                           font-size: 60px;
                           margin-bottom: 30px;"></i>
-                          <h2 style=" font-size: 18px;">Secure Payment</h2>
+                          <h2 style=" font-size: 18px;">دفع امن</h2>
                           <p style="   font-size: 15px;
                           margin: 0;">
-                              Lorem ipsum dolor sit amet consectetur elit
+                                                            يمكنك الدفع عن طريق الكاش او عن الفيزا
+
                           </p>
                       </div>
                   </div>
@@ -184,9 +185,9 @@ background: #f3f6ff; ">
                           <i   class="fa fa-truck" style="    color: #FF6F61;
                           font-size: 60px;
                           margin-bottom: 30px;"></i>
-                          <h2 style=" font-size: 18px;">Worldwide Delivery</h2>
+                          <h2 style=" font-size: 18px;">التوصيل</h2>
                           <p style="   font-size: 15px;">
-                              Lorem ipsum dolor sit amet consectetur elit
+                              يتم توصيل المنتج خلال 3 ابام من تاريخ الطلب
                           </p>
                       </div>
                   </div>
@@ -200,9 +201,9 @@ background: #f3f6ff; ">
                           <i   class="fa fa-sync-alt" style="    color: #FF6F61;
                           font-size: 60px;
                           margin-bottom: 30px;"></i>
-                          <h2 style=" font-size: 18px;">90 Days Return</h2>
+                          <h2 style=" font-size: 18px;">استرجاع المنتج</h2>
                           <p style="   font-size: 15px;">
-                              Lorem ipsum dolor sit amet consectetur elit
+                              يمكنك ارجاع المنتج خلال فتره اسبوع ع ان يكون ف حالته الاصليه
                           </p>
                       </div>
                   </div>
@@ -216,9 +217,9 @@ background: #f3f6ff; ">
                           <i   class="fa fa-comments" style="    color: #FF6F61;
                           font-size: 60px;
                           margin-bottom: 30px;"></i>
-                          <h2 style=" font-size: 18px;">24/7 Support</h2>
+                          <h2 style=" font-size: 18px;">الدعم</h2>
                           <p style="   font-size: 15px;">
-                              Lorem ipsum dolor sit amet consectetur elit
+                             يمكنك التواصل معانا في حاله وجود اي شئ لك
                           </p>
                       </div>
                   </div>

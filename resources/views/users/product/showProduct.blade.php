@@ -47,9 +47,9 @@
                             <div class="col-md-6">
                                 <div class="product p-4">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center"> <a class="text-decoration-none text-black" href="{{ url('/') }}"><i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span></a> </div>
+                                        <div class="d-flex align-items-center"> <a class="text-decoration-none text-black" href="{{ url('/') }}"><i class="fa fa-long-arrow-left"></i> <span class="ml-1">رجوع</span></a> </div>
                                     </div>
-                                    <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">Orianz</span>
+                                    <div class="mt-4 mb-3"> 
                                         <h5 class="text-uppercase">{{$data->name}}</h5>
                                         <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$data->price}}EGP</span>
                                         </div>
@@ -57,10 +57,10 @@
                                     <p class="about">{{$data->description}}.</p>
                                     <form method="post" action="{{ route('add_to_cart',$data) }}"  >
                                     <div class="sizes mt-5">
-                                        <h6 class="text-uppercase">Size</h6> <label class="radio"> <input type="radio" name="size" value="S" checked> <span>S</span> </label> <label class="radio"> <input type="radio" name="size" value="M"> <span>M</span> </label> <label class="radio"> <input type="radio" name="size" value="L"> <span>L</span> </label> <label class="radio"> <input type="radio" name="size" value="XL"> <span>XL</span> </label> <label class="radio"> <input type="radio" name="size" value="XXL"> <span>XXL</span> </label>
+                                        <h6 class="text-uppercase">الحجم</h6> <label class="radio"> <input type="radio" name="size" value="S" checked> <span>S</span> </label> <label class="radio"> <input type="radio" name="size" value="M"> <span>M</span> </label> <label class="radio"> <input type="radio" name="size" value="L"> <span>L</span> </label> <label class="radio"> <input type="radio" name="size" value="XL"> <span>XL</span> </label> <label class="radio"> <input type="radio" name="size" value="XXL"> <span>XXL</span> </label>
                                     </div>
                                         @csrf
-                                    <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>  </div>
+                                    <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">اضف الي السله</button>  </div>
 
                                     </form>
                                 </div>
@@ -72,7 +72,7 @@
         </div>
 
     <!-- Related Projects Row -->
-    <h3 class="my-4">Related Product</h3>
+    <h3 class="my-4">منتجات ذات صله </h3>
 
     <div class="row">
         @foreach ($related as $item)
@@ -81,7 +81,7 @@
 
 
       <div class="col-md-3 col-sm-6 mb-4">
-        <a href="#">
+        <a href="{{route("products.show",[$item->id])}}">
               <img class="img-fluid" src="{{\Storage::url($item->photo)}}" alt="">
             </a>
       </div>

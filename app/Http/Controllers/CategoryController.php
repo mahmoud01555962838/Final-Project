@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
          $categorys = Category::all();
-        return view("users.category.allcategory", [ "categorys" => $categorys]); 
+        return view("admin.categoryAdmin", [ "categorys" => $categorys]); 
     }
 
     /**
@@ -41,7 +41,7 @@ class CategoryController extends Controller
             'name' => 'required | min:4',
         ]);
        Category::create($request->all());
-       return redirect('/');
+       return redirect('/categoryAdmin');
       
     }
 
@@ -80,7 +80,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->update($request->all());
-      return redirect('/');
+      return redirect('/categoryAdmin');
     //   ->route("");
     }
 
@@ -93,7 +93,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-       return redirect('/');
+       return redirect('/categoryAdmin');
     //    ->route("products.index")
     }
 
@@ -104,4 +104,9 @@ class CategoryController extends Controller
         ])->get();
         return redirect('products.index', ['category1'=>$category1]);
     } 
+    // public function getcount(){
+    //     $wordlist = Category::where('id', '<=', $correctedComparisons)->get();
+    //     $wordCount = $wordlist->count();
+    //     return view('admin.dashbord', ['wordCount'=>$wordCount]);
+    //     }
 }

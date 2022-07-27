@@ -19,6 +19,8 @@ class ProductController extends Controller
             $cat=Category::find(1);
             $cat2=Category::find(2);
             return view("products.index",["products" => $products, "cat" =>$cat ,"cat2" =>$cat2]);
+            // return view("admin.productAdmin",["products" => $products, "cat" =>$cat ,"cat2" =>$cat2]);
+            // return view("admin.productAdmin",["product" => $product]);
 
 
     }
@@ -57,7 +59,7 @@ class ProductController extends Controller
 
         $request->validate([
             'name' => 'required | min:4',
-            'description' => 'required | min:30',
+            'description' => 'required | min:10',
             'price' => 'required|numeric',
             'photo' => 'required|image|mimes:jpg,png,jpeg|max:2048',
 
@@ -73,7 +75,7 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->save();
      
-        return redirect('/');
+        return redirect('/productAdmin');
         // ->route('/')
         //                 ->with('success','تمت اضافه المنتج');
     }
@@ -119,7 +121,7 @@ class ProductController extends Controller
       //w7da gdeda
       $request->validate([
             'name' => 'required | min:4',
-            'description' => 'required | min:30',
+            'description' => 'required | min:10',
             'price' => 'required|numeric ',
             // 'photo' => 'required|image|mimes:jpg,png,jpeg|max:2048'
         
@@ -133,14 +135,21 @@ class ProductController extends Controller
         $path = $request->file('photo')->store('public/images');
         $product->photo = $path;
     }
+    // $product->name = $request->name;
+    // $product->description = $request->description;
+    // $product->price = $request->price;
+    // $product->photo = $path;
+    // $product->category_id = $request->category_id;
+    // $product->save();
+        
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->photo = $path;
+        // $product->photo = $path;
         // $product->photo = $request->photo;
         $product->category_id = $request->category_id;
-    $product->save();
-    return redirect('/');
+        $product->save();
+        return redirect('/productAdmin');
     // ->route('products.index')
     //                 ->with('success','تم تعديل المنتج');
     }
@@ -154,7 +163,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-       return redirect()->route("products.index");
+       return redirect("/productAdmin");
     }
 
 
