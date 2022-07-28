@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\AuthenticationController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\CategoryController;
+use App\Http\Controllers\api\CartController;
+
 
 
 
@@ -35,6 +37,8 @@ Route::post('/logout', [AuthenticationController::class, 'logout']);
 
 Route::apiresource("/products", ProductController::class);
 Route::apiresource("/categorys", CategoryController::class);
+Route::apiresource("/cart", CartController::class);
+
 
 
 
