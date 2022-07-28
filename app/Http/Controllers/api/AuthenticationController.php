@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-
 class AuthenticationController extends Controller
 {
     public function createUser(Request $request){
@@ -25,17 +24,15 @@ class AuthenticationController extends Controller
                 "email"=>$userData["email"],
                 "password"=>bcrypt($userData["password"])
 
-            ]
-            
-            );
-
-         if($user){
-
-            return response()->json([
-                "msg"=>"created successfully",
-                 "token"=>$user->createToken("token")->plainTextToken    
             ]);
-         };   
+
+            $token = $user->createToken('apiToken')->plainTextToken;
+            $res = [
+                'user' => $user,
+                'token' => $token
+            ];
+            return response($res, 201);
+
 }
 
 
@@ -66,12 +63,11 @@ public function signin(Request $request){
 
 public function logout(Request $request)
 {
-    if ($request->user()) { 
-        $request->user()->tokens()->delete();
-        return response()->json(['message' => 'Вы вышли из системы'], 200);
-
-    }
-
+    // $request->user()->currentAccessTokens()->delete();
+    $request->user()->tokens()->delete();
+        return [
+            'message' => 'user logged out'
+        ];
 }
 
 }
