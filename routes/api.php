@@ -51,6 +51,17 @@ Route::apiresource("/cart", CartController::class);
 
 Route::apiresource("/users", UserController::class);
 
+Route::get("search",[ProductController::class,'search'])->name('search');
+
+
+Route::get("filter1",[ProductController::class,'filter1'])->name('filter1');
+Route::get("filter2",[ProductController::class,'filter2'])->name('filter2');
+Route::get("filter3",[ProductController::class,'filter3'])->name('filter3');
+
+
+
+
+
 
 
 
