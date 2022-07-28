@@ -16,6 +16,8 @@ class CartController extends Controller
     public function index()
     {
         //
+        $carts=Cart::all();
+        return $carts;
     }
 
     /**
@@ -36,7 +38,13 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $added = Cart::create($request->all());
+
+        if($added){
+            return response()->json([
+                "msg"=> "added succusfully"
+            ]);
+        };
     }
 
     /**
@@ -48,6 +56,10 @@ class CartController extends Controller
     public function show(Cart $cart)
     {
         //
+
+        return response()->json([
+            $cart
+        ]);
     }
 
     /**
@@ -71,6 +83,13 @@ class CartController extends Controller
     public function update(Request $request, Cart $cart)
     {
         //
+        $updated = $cart->update($request->all());
+
+        if($updated){
+            return response()->json([
+                "msg"=> "updated succusfully"
+            ]);
+        };
     }
 
     /**
@@ -82,5 +101,14 @@ class CartController extends Controller
     public function destroy(Cart $cart)
     {
         //
+        $deleted = $cart->delete();
+
+        if($deleted){
+            return response()->json([
+                "msg"=> "deleted succusfully",
+                "code"=> 200
+            ]);
+        };
+
     }
 }
