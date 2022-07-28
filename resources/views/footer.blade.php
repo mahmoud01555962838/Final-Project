@@ -135,9 +135,9 @@
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
               <h3 class="text-uppercase mb-4 font-weight-bold">التواصل</h3>
               <p><i class="fas fa-home mr-3"></i> المنيا, المنيا 10012, مصر</p>
-              <p><i class="fas fa-envelope mr-3"></i> hdyytk@gmail.com</p>
+              <p><i class="fas fa-envelope mr-3"></i> <a href="mailto:hedytak116@gmail.com" class="text-decoration-none text-white"> hedytak116@gmail.com</a></p>
               <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-              <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+              <p><i class="fas fa-phone mr-3"></i> + 01 234 567 89</p>
             </div>
             <!-- Grid column -->
   
@@ -149,7 +149,8 @@
               <a
                  class="btn btn-primary btn-floating m-1"
                  style="background-color: #3b5998"
-                 href="#!"
+                 target="_blank"
+                 href="https://www.facebook.com/%D9%87%D8%AF%D9%8A%D8%AA%D9%83-100538142762184"
                  role="button"
                  ><i class="fab fa-facebook-f"></i
                 ></a>
@@ -158,19 +159,21 @@
               <a
                  class="btn btn-primary btn-floating m-1"
                  style="background-color: #55acee"
-                 href="#!"
+                 target="_blank"
+                 href="https://twitter.com/SaraYou14462004"
                  role="button"
                  ><i class="fab fa-twitter"></i
                 ></a>
   
               <!-- Google -->
-              <a
+           {{--    <a
                  class="btn btn-primary btn-floating m-1"
                  style="background-color: #dd4b39"
-                 href="#!"
+                 href="mailto:hedytak116@gmail.com"
+                 
                  role="button"
                  ><i class="fab fa-google"></i
-                ></a>
+                ></a> --}}
   
               <!-- Instagram -->
               <a
@@ -182,21 +185,16 @@
                 ></a>
   
               <!-- Linkedin -->
-              <a
+           {{--    <a
                  class="btn btn-primary btn-floating m-1"
                  style="background-color: #0082ca"
                  href="#!"
                  role="button"
                  ><i class="fab fa-linkedin-in"></i
-                ></a>
+                ></a> --}}
               <!-- Github -->
-              <a
-                 class="btn btn-primary btn-floating m-1"
-                 style="background-color: #333333"
-                 href="#!"
-                 role="button"
-                 ><i class="fab fa-github"></i
-                ></a>
+              <hr style="color: white ; font:bold ;height: 5px;" >
+           <img src="{{ asset('images/paypal_logo_icon_170865.png') }}" style="width: 100px; height: 70px;">
             </div>
           </div>
           <!--Grid row-->

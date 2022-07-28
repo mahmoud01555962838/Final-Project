@@ -16,12 +16,12 @@
   @endforeach
 </div>
 <hr>
-<div class="me-3">
+<div class="me-3 ">
   <h2 style="color: #FF6F61" class="mt-3">السعر</h2>
  
-  <a class="text-decoration-none " href="{{route("filter1",[$category->id])}}" >اقل من 50 </a><br>
-  <a class="text-decoration-none " href="{{route("filter2",[$category->id])}}" > من 50 الي 100 EGY</a><br>
-  <a class="text-decoration-none " href="{{route("filter3",[$category->id])}}" >اكثر من 100 EGY</a> 
+  <i class="fa-solid fa-greater-than " style="color: #FF6F61"></i><a class=" text-decoration-none text-black" href="{{route("filter1",[$category->id])}}" >اقل من 50 </a><br>
+  <i class="fa-solid fa-greater-than " style="color: #FF6F61"></i> <a class="text-decoration-none text-black" href="{{route("filter2",[$category->id])}}" >من 50 الي 100 EGY</a><br>
+  <i class="fa-solid fa-greater-than "  style="color: #FF6F61"></i><a class="text-decoration-none text-black" href="{{route("filter3",[$category->id])}}" >اكثر من 100 EGY</a> 
 </div>
   
   </div>

@@ -227,7 +227,7 @@ background: #f3f6ff; ">
           </div>
       </div>
 
-      <section style="background-color: #eee;">
+      <section style="background-color: #eee;" class="container">
         <div class="text-center container py-5">
           <h2 class="mt-4 mb-5 fs-1"><strong class="justify-content-end"> {{$cat2?->name}} </strong></h2>
 
