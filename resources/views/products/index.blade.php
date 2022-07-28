@@ -237,16 +237,17 @@ background: #f3f6ff; ">
 
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card">
-                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                <div class="bg-image hover zoom ripple ripple-surface ripple-surface-light"
                   data-mdb-ripple-color="light">
+                  
                   <img src="{{Storage::url($data->photo)}}"
                     class="w-100" style="height: 15rem" />
-                  <a href="#!">
+                  <!-- <a href="#!">
 
                     <div class="hover-overlay">
                       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                     </div>
-                  </a>
+                  </a> -->
                 </div>
                 <div class="card-body">
 
