@@ -5,6 +5,8 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ProductController extends Controller
 {
@@ -131,5 +133,39 @@ class ProductController extends Controller
                 "code"=> 200
             ]);
         };
+    }
+
+    public function search(Request $req)
+    {
+        $data= Product::
+        where('name', 'like', '%'.$req->input('query').'%')
+        ->get();
+        return $data;
+    }
+
+    public function filter1()
+    {
+        $data=Product::
+        whereBetween('price', [0, 50])
+        ->get();
+
+        return $data;
+
+    }
+
+    public function filter2()
+    {
+        $data=Product::
+        whereBetween('price', [50, 100])
+        ->get();
+
+        return $data;
+
+    }
+
+    public function filter3()
+    {
+        $data= DB::table('products')->orderBy('price', 'asc')->where('price', '>', 100)->get();
+        return $data;
     }
 }
