@@ -38,7 +38,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         
-    /*     $request->validate([
+            $request->validate([
             'name' => 'required | min:4',
             'description' => 'required | min:30',
             'price' => 'required|numeric',
@@ -54,21 +54,22 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->photo = $path;
         $product->category_id = $request->category_id;
-       $product->save();
-       if($product){
+        $created= $product->save();
+       if($created){
         return response()->json([
+
+            $created,
             "msg"=> "added succusfully"
         ]);
-    }; */
+    }; 
        
-//return $product;
-       $added = Product::create($request->all());
+    //    $added = Product::create($request->all());
 
-        if($added){
-            return response()->json([
-                "msg"=> "added succusfully"
-            ]);
-        };
+    //     if($added){
+    //         return response()->json([
+    //             "msg"=> "added succusfully"
+    //         ]);
+    //     };
      
     }
 
