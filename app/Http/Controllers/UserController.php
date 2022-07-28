@@ -94,4 +94,8 @@ class UserController extends Controller
         $user->delete();
         return redirect('/userAdmin');
     }
+     public function count()
+    {
+        $count = User::where('id',$id)->count();
+    }
 }

@@ -12,8 +12,8 @@
                 <a href="#" class="btn " style="background:#134E6F; color: #FFA822 ">اضف الي السله</a>
 
             </div>
-            <div class="col-md-5 w-30">
-                <img class="w-100 rounded-4" src="{{Storage::url($data->photo)}}" alt="ramez">
+            <div class="col-md-5 w-100">
+                <img class=" rounded-4" src="{{Storage::url($data->photo)}}" alt="ramez">
             </div>
 
 
@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="images p-3">
-                                    <div class="text-center p-4"> <img id="main-image" src="{{\Storage::url($data->photo)}}" width="250" /> </div>
+                                    <div class="text-center p-4"> <img id="main-image" src="{{\Storage::url($data->photo)}}"  /> </div>
 
                                 </div>
                             </div>
@@ -80,9 +80,9 @@
         <p>{{ $item->description }}</p> --}}
 
 
-      <div class="col-md-3 col-sm-6 mb-4">
+      <div class="col-md-3 col-sm-6 mb-4 " >
         <a href="{{route("products.show",[$item->id])}}">
-              <img class="img-fluid" src="{{\Storage::url($item->photo)}}" alt="">
+              <img class="img-fluid" src="{{\Storage::url($item->photo)}}" alt="" style="width:250px ; height:150px ;">
             </a>
       </div>
       @endforeach
