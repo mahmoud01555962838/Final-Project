@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -64,5 +67,14 @@ html { overflow-y: scroll; }
 
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script type="text/javascript">
+    document.umnicoWidgetHash = '2e2c8c94c377ae73b0b2638a40cf0ecd';
+    var x = document.createElement('script');
+    x.src = 'https://umnico.com/assets/widget-loader.js';
+    x.type = 'text/javascript';
+    x.charset = 'UTF-8';
+    x.async = true;
+    document.body.appendChild(x);
+</script>
 @yield('js')
 </html>

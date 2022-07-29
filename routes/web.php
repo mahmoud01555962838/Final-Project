@@ -24,9 +24,15 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+<<<<<<< HEAD
+Route::post('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name('cart');
+
+Route::get('/order', [App\Http\Controllers\HomeController::class, 'order'])->name('order');
+=======
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('add-to-cart/{id}', [CartController::class, 'store'])->name('add_to_cart');
 Route::get('/order', [\App\Http\Controllers\HomeController::class, 'order'])->name('order');
+>>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
 
 
  //Route::get("/suggest", [SuggestionController::class, "create"]);

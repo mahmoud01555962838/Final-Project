@@ -1,6 +1,5 @@
 @extends('layouts.app')
-
-@section('content'){{-- 
+@section('content'){{--
 <div class="container ">
     <div class="row justify-content-center">
         <div class="col col-lg-8 ">
@@ -117,14 +116,14 @@
       .cascading-right {
         margin-right: -50px;
       }
-  
+
       @media (max-width: 991.98px) {
         .cascading-right {
           margin-right: 0;
         }
       }
     </style>
-  
+
     <!-- Jumbotron -->
     <div class="container py-4">
       <div class="row g-0 align-items-center">
@@ -145,7 +144,7 @@
                 <div class="row">
          <!-- name input -->
                 <div class="form-outline mb-4">
-                    <input type="text" 
+                    <input type="text"
                     id="name"  placeholder="@lang('الأسم بالكامل...')" class=" form-control rounded-pill @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
                     />
                     <label class="form-label mt-2 fs-5" for="form3Example3">الاسم بالكامل</label>
@@ -158,7 +157,7 @@
                   </div>
                      <!-- Email input -->
                   <div class="form-outline mb-4">
-                    <input 
+                    <input
                     id="email" type="email" placeholder="@lang('الأيميل...')" class="form-control rounded-pill @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"
                      />
                     <label class="form-label mt-2 fs-5" for="form3Example3">الايميل</label>
@@ -180,7 +179,7 @@
                   </div>
              {{-- passward --}}
              <div class="form-outline mb-4">
-                <input 
+                <input
                 id="password" type="password"  placeholder="@lang('كلمة السر...')" class="form-control rounded-pill @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"/>
                 <label class="form-label mt-2 fs-5" for="form3Example4">كلمة السر</label>
                 @error('password')
@@ -189,29 +188,29 @@
                 </span>
             @enderror
               </div>
-  
+
                 <!-- Password confimation -->
                 <div class="form-outline mb-4">
-                  <input 
+                  <input
                   id="password-confirm" type="password" placeholder="@lang('اعادة كلمة السر...')"class="form-control rounded-pill " name="password_confirmation" required autocomplete="new-password" />
                   <label class="form-label mt-2 fs-5" for="form3Example4">اعادة كلمة السر</label>
                 </div>
-  
-            
-       
-  
+
+
+
+
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4 rounded-pill">
                     {{ __('التسجيل') }}
                 </button>
-  
-        
+
+
               </form>
             </div>
           </div>
         </div>
-  
-        
+
+
       </div>
     </div>
     <!-- Jumbotron -->

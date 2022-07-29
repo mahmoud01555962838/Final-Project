@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}" dir="rtl">
 <head>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <style>
      body{
-        background-color: #1AC0C6 ;
+        background-color: #1AC0C6 !important;
        }
        .form-control {
      border: 0!important;
@@ -102,5 +104,14 @@
             @yield('content')
         </main>
     </div>
+    <script type="text/javascript">
+        document.umnicoWidgetHash = '2e2c8c94c377ae73b0b2638a40cf0ecd';
+        var x = document.createElement('script');
+        x.src = 'https://umnico.com/assets/widget-loader.js';
+        x.type = 'text/javascript';
+        x.charset = 'UTF-8';
+        x.async = true;
+        document.body.appendChild(x);
+    </script>
 </body>
 </html>

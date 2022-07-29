@@ -1,6 +1,6 @@
-@extends('layouts.app')
 
-@section('content'){{-- 
+@extends('layouts.app')
+@section('content'){{--
 <div class="container">
     <div class="row justify-content-center">
         <div class="col col-lg-8 ">
@@ -77,21 +77,21 @@
 @endsection
  --}}
 
- 
+
 <!-- Section: Design Block -->
 <section class="text-center text-lg-start">
     <style>
       .cascading-right {
         margin-right: -50px;
       }
-  
+
       @media (max-width: 991.98px) {
         .cascading-right {
           margin-right: 0;
         }
       }
     </style>
-  
+
     <!-- Jumbotron -->
     <div class="container py-4">
       <div class="row g-0 align-items-center">
@@ -110,11 +110,11 @@
                 @csrf
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
-        
-       
+
+
                      <!-- Email input -->
                   <div class="form-outline mb-4">
-                    <input 
+                    <input
                     id="email" type="email" placeholder="@lang('الأيميل...')" class="form-control rounded-pill @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"
                      />
                     <label class="form-label mt-2 fs-4" for="form3Example3">الايميل</label>
@@ -124,10 +124,10 @@
                     </span>
                 @enderror
                   </div>
-                 
+
              {{-- passward --}}
              <div class="form-outline mb-4">
-                <input 
+                <input
                 id="password" type="password" placeholder="@lang('كلمة السر...')" class="form-control rounded-pill @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"/>
                 <label class="form-label mt-2 fs-4" for="form3Example4">كلمة السر</label>
                 @error('password')
@@ -136,33 +136,33 @@
                 </span>
             @enderror
               </div>
-  
-              
+
+
                 <div class=" m-3 ">
                     @if (Route::has('password.request'))
                         <a  class="btn fs-3 float-end" href="{{ route('password.request') }}">
                             {{ __('هل نسيت كلمة السر... ؟') }}
                         </a>
                     @endif
-              
+
             </div>
-            
-       
-  
+
+
+
                 <!-- Submit button -->
-                
+
                 <button type="submit" class="btn btn-primary btn-block mb-4 rounded-pill">
 
                     {{ __('تسجيل الدخول') }}
                 </button>
-  
-        
+
+
               </form>
             </div>
           </div>
         </div>
-  
-        
+
+
       </div>
     </div>
     <!-- Jumbotron -->
