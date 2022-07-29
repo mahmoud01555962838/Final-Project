@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+<<<<<<< HEAD
     public function cartList()
     {
         $cartItems = Cart::getContent();
@@ -59,6 +60,58 @@ class CartController extends Controller
     public function clearAllCart()
     {
         Cart::clear();
+=======
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $user = $request->user();
+        $carts = $user->carts()->with('product')->get();
+
+        return view('cart',compact('carts'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(int $id,Request $request)
+    {
+        $cart = Cart::query()->updateOrCreate([
+            'user_id'=>$request->user()->id,
+            'product_id'=>$id,
+            'size'=>$request->get('size'),
+        ],[
+           'qty'=>(int)$request->get('qty',1),
+        ]);
+
+        if($cart->qty <= 0 ) {
+            $cart->delete();
+            return $request->wantsJson() ? response()->json([
+                "status"=>true
+            ]) : back()->with('status','deleted successfully');
+        }
+
+        return $request->wantsJson() ? response()->json([
+            "status"=>true
+        ]) : back()->with('status','deleted successfully');
+    }
+>>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
 
         session()->flash('success', 'All Item Cart Clear Successfully !');
 

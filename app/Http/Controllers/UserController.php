@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $users = User::all();
+        return view("admin.userAdmin", [ "users" => $users]);     }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+       //
     }
 
     /**
@@ -57,7 +57,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view("admin.userEdit",["user"=>$user]);
+        // @dd($user);
     }
 
     /**
@@ -67,9 +68,19 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {
-        //
+    // public function update(Request $request, User $user)
+    // {
+    //     User::create($request->all());
+    //     return redirect('/useryAdmin');
+    // }
+    public function update($id){
+        $user=new User;
+        $user=User::find($id);
+        $user->type = request("type");
+      
+        $user->save();
+        return redirect('/userAdmin'); 
+
     }
 
     /**
@@ -80,6 +91,11 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect('/userAdmin');
+    }
+     public function count()
+    {
+        $count = User::where('id',$id)->count();
     }
 }

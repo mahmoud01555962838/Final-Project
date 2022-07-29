@@ -1,6 +1,6 @@
 @extends('master')
 @section("content")
-
+@can('isAdmin')
 <div class="container mt-5" style="background: #FFF9F9">
 <div class="card">
     <div class="card-head">
@@ -16,10 +16,22 @@
        <label class="text-danger">{{$errors->first("name")}}</label>
      </div>
 
-     <button type="submit" class="btn btn-primary">حفظ</button>
+     <button type="submit" class="btn btn-primary">اضف</button>
    </form>
     </div>
 </div>
 
 </div>
+@else
+  
+{{--  @extends('notfound') --}}
+
+ <div class="container text-center">
+   <img src="{{ asset('images/oops.jpg') }}"><br><br>
+<h2 class="text-secondary">the page is not found</h2>
+<p class="fs-4">ان كنت تريد شئ اخر تستطيع <a class="fs-4 text-decoration-none" href="{{route('aboutus')}}">تواصل معنا</a></p>
+</div> 
+
+ 
+ @endcan
 @endsection

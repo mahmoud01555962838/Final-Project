@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 
 
 
+=======
+use Illuminate\Support\Facades\DB;
+>>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
 class ProductController extends Controller
 {
     /**
@@ -19,7 +23,12 @@ class ProductController extends Controller
     {
 
             $products=Product::all();
-            return view("products.index",["products" => $products]);
+            $cat=Category::find(1);
+            $cat2=Category::find(2);
+            return view("products.index",["products" => $products, "cat" =>$cat ,"cat2" =>$cat2]);
+            // return view("admin.productAdmin",["products" => $products, "cat" =>$cat ,"cat2" =>$cat2]);
+            // return view("admin.productAdmin",["product" => $product]);
+
 
     }
 
@@ -57,7 +66,7 @@ class ProductController extends Controller
 
         $request->validate([
             'name' => 'required | min:4',
-            'description' => 'required | min:30',
+            'description' => 'required | min:10',
             'price' => 'required|numeric',
             'photo' => 'required|image|mimes:jpg,png,jpeg|max:2048',
 
@@ -72,8 +81,13 @@ class ProductController extends Controller
         $product->photo = $path;
         $product->category_id = $request->category_id;
         $product->save();
+<<<<<<< HEAD
 
         return redirect('/');
+=======
+     
+        return redirect('/productAdmin');
+>>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
         // ->route('/')
         //                 ->with('success','تمت اضافه المنتج');
     }
@@ -86,8 +100,14 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+<<<<<<< HEAD
 
         return view("users.product.showProduct",["data"=>$product]);
+=======
+        // $catrel=Category::all();
+        $related = $product->relatedProducts(4, true)->with('category')->get();
+        return view("users.product.showProduct",["data"=>$product,"related"=>$related]);
+>>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
     }
 
     /**
@@ -118,7 +138,7 @@ class ProductController extends Controller
       //w7da gdeda
       $request->validate([
             'name' => 'required | min:4',
-            'description' => 'required | min:30',
+            'description' => 'required | min:10',
             'price' => 'required|numeric ',
             // 'photo' => 'required|image|mimes:jpg,png,jpeg|max:2048'
 
@@ -132,14 +152,21 @@ class ProductController extends Controller
         $path = $request->file('photo')->store('public/images');
         $product->photo = $path;
     }
+    // $product->name = $request->name;
+    // $product->description = $request->description;
+    // $product->price = $request->price;
+    // $product->photo = $path;
+    // $product->category_id = $request->category_id;
+    // $product->save();
+        
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->photo = $path;
+        // $product->photo = $path;
         // $product->photo = $request->photo;
         $product->category_id = $request->category_id;
-    $product->save();
-    return redirect('/');
+        $product->save();
+        return redirect('/productAdmin');
     // ->route('products.index')
     //                 ->with('success','تم تعديل المنتج');
     }
@@ -153,7 +180,42 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-       return redirect()->route("products.index");
+       return redirect("/productAdmin");
+    }
+
+
+    public function search(Request $req)
+    {
+        $data= Product::
+        where('name', 'like', '%'.$req->input('query').'%')
+        ->get();
+        return view('search',['products'=>$data]);
+    }
+
+    public function filter1()
+    {
+        $data=Product::
+        whereBetween('price', [0, 50])
+        ->get();
+
+        return view('filter',['products'=>$data]);
+
+    }
+
+    public function filter2()
+    {
+        $data=Product::
+        whereBetween('price', [50, 100])
+        ->get();
+
+        return view('filter',['products'=>$data]);
+
+    }
+
+    public function filter3()
+    {
+        $data= DB::table('products')->orderBy('price', 'asc')->where('price', '>', 100)->get();
+        return view('filter',['products'=>$data]);
     }
     function cart (Request $request){
          return "Hello" ;

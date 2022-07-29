@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}" dir="rtl">
 <head>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -102,5 +104,14 @@
             @yield('content')
         </main>
     </div>
+    <script type="text/javascript">
+        document.umnicoWidgetHash = '2e2c8c94c377ae73b0b2638a40cf0ecd';
+        var x = document.createElement('script');
+        x.src = 'https://umnico.com/assets/widget-loader.js';
+        x.type = 'text/javascript';
+        x.charset = 'UTF-8';
+        x.async = true;
+        document.body.appendChild(x);
+    </script>
 </body>
 </html>

@@ -27,5 +27,18 @@ class Product extends Model
         return $this->hasMany(Cart::class);
 
     }
+    /* related product */
+
+    public function scopeRelatedProducts($query, $count = 10, $inRandomOrder = true)
+{
+    $query = $query->where('category_id', $this->category_id)
+                   ->where('name', '!=', $this->name);
+
+    if ($inRandomOrder) {
+        $query->inRandomOrder();
+    }
+
+    return $query->take($count);
+}
 }
 
