@@ -1,7 +1,6 @@
 <!doctype html>
 <html dir="rtl" lang="ar">
   <head>
-   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
@@ -10,11 +9,11 @@
     <link rel="stylesheet" href="{{ asset('css/rtl.css') }}">
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+ 
  @yield('css')
 </head>
 <body>
-
+ 
     {{-- <form class="d-flex justify-content-center gap-2 " dir="rtl">
         <button class="btn btn-warning" type="submit">بحث|</button>
         <input class="form-control me-3 w-50" type="search"  aria-label="Search">

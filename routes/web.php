@@ -22,17 +22,35 @@ Route::get('/',[ProductController::class,'index'])->name('home1');;
 
 Auth::routes();
 
+Route::group(['middleware'=>['auth']],function (){
+    Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::get('/cart', [CartController::class, 'index'])->name('cart');
+    Route::post('add-to-cart/{id}', [CartController::class, 'store'])->name('add_to_cart');
+    Route::get('/order', [\App\Http\Controllers\OrderController::class, 'index'])->name('orders.index');
+    Route::get('/order/create', [\App\Http\Controllers\OrderController::class, 'create'])->name('orders.create');
+    Route::get('/order/cancel', [\App\Http\Controllers\OrderController::class, 'cancel'])->name('orders.cancel');
+    Route::get('/orders/{order}', [\App\Http\Controllers\OrderController::class, 'show'])->name('orders.show');
+    Route::post('/orders', [\App\Http\Controllers\OrderController::class, 'store'])->name('orders.store');
+
+    // Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
+    // Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
+    Route::get('success-transaction', [\App\Http\Controllers\PayPalController::class, 'successTransaction'])->name('orders.success');
+    // Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelOrder');
+    //Route::post('ipn/notify','PayPalController@postNotify'); // Change it accordingly in your application
+
+});
+
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-<<<<<<< HEAD
 Route::post('/cart', [App\Http\Controllers\HomeController::class, 'cart'])->name('cart');
 
 Route::get('/order', [App\Http\Controllers\HomeController::class, 'order'])->name('order');
-=======
+
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('add-to-cart/{id}', [CartController::class, 'store'])->name('add_to_cart');
 Route::get('/order', [\App\Http\Controllers\HomeController::class, 'order'])->name('order');
->>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
+
 
 
  //Route::get("/suggest", [SuggestionController::class, "create"]);

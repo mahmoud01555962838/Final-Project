@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-<<<<<<< HEAD
+
     public function cartList()
     {
         $cartItems = Cart::getContent();
@@ -60,12 +60,13 @@ class CartController extends Controller
     public function clearAllCart()
     {
         Cart::clear();
-=======
+
         /**
      * Create a new controller instance.
      *
      * @return void
      */
+    }
     public function __construct()
     {
         $this->middleware('auth');
@@ -111,10 +112,6 @@ class CartController extends Controller
             "status"=>true
         ]) : back()->with('status','deleted successfully');
     }
->>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
 
-        session()->flash('success', 'All Item Cart Clear Successfully !');
 
-        return redirect()->route('cart.list');
-    }
 }
