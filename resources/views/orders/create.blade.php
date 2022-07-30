@@ -1,8 +1,5 @@
 @extends('master')
 @section("content")
-
-
-
 <div class="container">
     <div class="card mt-3">
         <div class="card-body">
@@ -16,7 +13,6 @@
                         <th>السعر </th>
                         <th>الكمية</th>
                         <th>الاجمالي</th>
-                        <th>حذف</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,16 +23,9 @@
                             <td>{{ $cart?->size }}</td>
                             <td>{{ $cart?->product?->price }}</td>
                             <td>
-                                <form action="{{ route('add_to_cart',['id'=>$cart->product->id,'size'=>$cart->size]) }}" method="post" id="form-{{ $cart->id }}">@csrf
-                                    <input class="cart-qty" value="{{ $cart->qty }}" type="number" name="qty" min="0" onchange="document.getElementById('form-{{ $cart->id }}').submit()" class="form-control" style="width:75px"/>
-                                </form>
+                                {{ $cart->qty }}
                             </td>
                             <td>{{ $total= + $cart->total() }}</td>
-                            <td>
-                                <form action="{{ route('add_to_cart',['id'=>$cart->product->id,'size'=>$cart->size,'qty'=>0]) }}" method="post" id="form-{{ $cart->id }}">@csrf
-                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                                </form>
-                            </td>
                         </tr>
                     @empty
                     <tr>
@@ -52,12 +41,22 @@
                         <td scope="row"></td>
                         <td>{{ $carts->sum('qty') }}</td>
                         <td>{{ array_sum($carts->map->total()->toArray()) }}</td>
-                        <td scope="row"></td>
 
                     </tr>
                 </tbody>
             </table>
-            <a href="{{ route('orders.create') }}" class="btn btn-sm btn-info">انشاء طلب </a>
+            <form action="{{ route('orders.store') }}" method="post">@csrf
+                <select class="form-control" name="address_id" id="address">
+                    @forelse ($user->addresses ?? [] as $address)
+                        <option value="{{ $address->id }}">
+                            {{ $address->street }} - {{ $address->area }} - {{ $address->building }} - {{ $address->city }}
+                        </option>
+                    @empty
+                           <h1>7aga</h1> 
+                    @endforelse
+                </select>
+                <button  class="btn btn-sm btn-info">طلب</button>
+            </form>
         </div>
     </div>
 </div>

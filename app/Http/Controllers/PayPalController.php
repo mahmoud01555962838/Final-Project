@@ -41,7 +41,7 @@ class PayPalController extends Controller
         if (in_array(strtoupper($response['ACK']), ['SUCCESS', 'SUCCESSWITHWARNING'])) {
             dd('Your payment was successfully.',$response,$request->all());
             $id = $response['TOKEN'] ?? 0;
-            Order::where('ref_id',$id)->update(['status'=>Order::STATUS['success']])
+            Order::where('ref_id',$id)->update(['status'=>Order::STATUS['success']]);
 
             return redirect()
             ->route('orders.index')

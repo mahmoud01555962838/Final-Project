@@ -1,6 +1,6 @@
 
 
-<nav class="navbar navbar-expand-lg p-2 mb-6" style="background: #FF6F61;">
+<nav class="navbar navbar-expand-lg p-2 mb-6" style="background: #f32786;">
     <div class="container">
       <a class="navbar-brand fs-1" style="color: black" href="{{ url('/') }}">{{ config('app.name') }}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

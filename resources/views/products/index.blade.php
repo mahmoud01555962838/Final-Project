@@ -1,100 +1,8 @@
-<<<<<<< HEAD
-{{-- @extends('master')
-@section("content")
-<div class="card">
-    <div class="card-body" > --}}
-
-        {{-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                @foreach ($products as $item)
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $loop->index }}" class="{{$loop->index === 0 ? 'active' : ''}}" aria-current="{{$loop->index === 0 ? 'true' : 'false'}}" aria-label="Slide 1"></button>
-                @endforeach
-            </div>
-            <div class="carousel-inner" style="max-height: 600px;">
-                @foreach ($products as $item)
-                    <div class="carousel-item {{$loop->index === 0 ?'active':''}}">
-                        <img src="{{$item['photo']}}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                        <h5>{{$item['name']}}</h5>
-                        <p>{{$item['description']}}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </div> --}}
-
-            {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">السابق</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">التالي</span>
-            </button> --}}
-          {{-- </div> --}}
-
-         {{--  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://images.unsplash.com/photo-1607469256872-48074e807b0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Z2lmdHN8ZW58MHx8MHx8&w=1000&q=80" class="d-block w-100 h-10 " alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="https://cdn.pixabay.com/photo/2014/11/27/22/44/gift-548290__340.jpg" class="d-block w-100 h-10" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-gift-cards-2021-1637270343.jpg" class="d-block w-100 h-10" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-    </div>
-
-        </div> --}}
-
-     {{--    <div class="text-center">
-            <img src="{{Storage::url($dataphoto->photo)}}" class="rounded" alt="...">
-          </div> --}}
-
-  {{--       <div class="card mt-5" >
-          <div class="card-body" > --}}
-         {{--
-          @foreach(\App\Models\Category::all() as $data)
-          <div class="container row">
-          <h2 class="fs-3 m-5">{{$data->name}}</h2>
-
-          <div class="carousel" data-flickity>
-            @foreach($data->products as $dataphoto)
-
-                <a href="{{route("products.show",[$dataphoto->id])}}">
-                  <img class="rounded-4 m-5" src="{{Storage::url($dataphoto->photo)}}" alt="ramez" style="height: 200px">
-                </a>
-
-              @endforeach
-            </div>
-
-        </div>
-        @endforeach
-        </div>
-      </div>
-    </div>
-</div>
-@endsection
- --}}
-=======
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <body style="   color: #353535;
 font-family: 'Open Sans', sans-serif;
 font-weight: 400;
 background: #f3f6ff; ">
->>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
-
- 
 
 @extends('master')
 
@@ -119,36 +27,6 @@ background: #f3f6ff; ">
             <div class="carousel-item">
               <img src="{{ asset('images/gift1.jpg') }}" class="d-block w-100 m-3" style="height: 29rem" alt="...">
             </div>
-<<<<<<< HEAD
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          {{-- </div> --}}
-    </div>
-
-        </div>
-
-        <div class="card mt-5 container" >
-          <div class="card-body" >
-          @foreach(\App\Models\Category::all() as $data)
-          <div class="container h-100 row ">
-            <a href="categorys/{{$data->id}}" class="btn" >
-              <h2 class="fs-3 m-5 text-center " style="background-color: blueviolet; color:orange">{{$data->name}}</h2>
-            </a>
-          @foreach($data->products as $dataphoto)
-              <div class="col-md-2 w-30 ">
-                <a href="{{route("products.show",[$dataphoto->id])}}">
-                  <img class="w-100 rounded-4" src="{{Storage::url($dataphoto->photo)}}" alt="img">
-                </a>
-              </div>
-              @endforeach
-=======
->>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -163,15 +41,13 @@ background: #f3f6ff; ">
       <div class="col-4 m-3 bg-light" style="float: right ; text-align: right ">
 
         <ul class="container  mt-5 " style="list-style-type: none; ">
-          <span class="fs-3 ms-3">الرئيسيه</span> <i class="fa-solid fa-house" style="color: #FF6F61;"></i>
+          <span class="fs-3 ms-3">الرئيسيه</span> <i class="fa-solid fa-house" style="color: #f32786;"></i>
           @foreach(\App\Models\Category::all() as $data)
-          <a href="{{route("categorys.show",[$data->id])}}" style="text-decoration: none; "> <li class=" bold text-black"> <span class="fs-3 ms-3">  {{$data->name}}</span> <i class="fa-solid fa-arrow-left" style="color: #FF6F61"></i></li></a>
+          <a href="{{route("categorys.show",[$data->id])}}" style="text-decoration: none; "> <li class=" bold text-black"> <span class="fs-3 ms-3">  {{$data->name}}</span> <i class="fa-solid fa-arrow-left" style="color: #f32786"></i></li></a>
           @endforeach
         </ul>
       </div>
 </div>
-<<<<<<< HEAD
-=======
 </div>
 
       <!-- Feature End-->
@@ -263,8 +139,8 @@ background: #f3f6ff; ">
 
                   <h5 class="mb-3">{{$data->price}}EGP</h5>
                    <div class="d-grid gap-2 col-6 mx-auto">
-                  <a href="{{route("products.show",[$data->id])}}" class="btn fs-4" style="background-color: black ; color: #FF6F61">التفاصيل</a>
-                  <!-- <a href="" class="btn fs-4" style="background-color: #FF6F61">اضف الي السله</a> -->
+                  <a href="{{route("products.show",[$data->id])}}" class="btn fs-4" style="background-color: black ; color: #f32786">التفاصيل</a>
+                  <!-- <a href="" class="btn fs-4" style="background-color: #f32786">اضف الي السله</a> -->
                 </div>
                 </div>
               </div>
@@ -288,7 +164,7 @@ background: #f3f6ff; ">
                       padding: 30px 15px;
                       text-align: center;
                       background: #ffffff;">
-                          <i class="fab fa-cc-mastercard" style="    color: #FF6F61;
+                          <i class="fab fa-cc-mastercard" style="    color: #f32786;
                           font-size: 60px;
                           margin-bottom: 30px;"></i>
                           <h2 style=" font-size: 18px;">دفع امن</h2>
@@ -306,7 +182,7 @@ background: #f3f6ff; ">
                       padding: 30px 15px;
                       text-align: center;
                       background: #ffffff;">
-                          <i   class="fa fa-truck" style="    color: #FF6F61;
+                          <i   class="fa fa-truck" style="    color: #f32786;
                           font-size: 60px;
                           margin-bottom: 30px;"></i>
                           <h2 style=" font-size: 18px;">التوصيل</h2>
@@ -322,7 +198,7 @@ background: #f3f6ff; ">
                       padding: 30px 15px;
                       text-align: center;
                       background: #ffffff;">
-                          <i   class="fa fa-sync-alt" style="    color: #FF6F61;
+                          <i   class="fa fa-sync-alt" style="    color: #f32786;
                           font-size: 60px;
                           margin-bottom: 30px;"></i>
                           <h2 style=" font-size: 18px;">استرجاع المنتج</h2>
@@ -338,7 +214,7 @@ background: #f3f6ff; ">
                       padding: 30px 15px;
                       text-align: center;
                       background: #ffffff;">
-                          <i   class="fa fa-comments" style="    color: #FF6F61;
+                          <i   class="fa fa-comments" style="    color: #f32786;
                           font-size: 60px;
                           margin-bottom: 30px;"></i>
                           <h2 style=" font-size: 18px;">الدعم</h2>
@@ -351,7 +227,7 @@ background: #f3f6ff; ">
           </div>
       </div>
 
-      <section style="background-color: #eee;" class="container">
+      <section  class="container">
         <div class="text-center container py-5">
           <h2 class="mt-4 mb-5 fs-1"><strong class="justify-content-end"> {{$cat2?->name}} </strong></h2>
 
@@ -381,8 +257,8 @@ background: #f3f6ff; ">
 
                   <h5 class="mb-3">{{$data->price}}EGP</h5>
                    <div class="d-grid gap-2 col-6 mx-auto">
-                  <a href="{{route("products.show",[$data->id])}}" class="btn fs-4" style="background-color: black ; color: #FF6F61">التفاصيل</a>
-                  <!-- <a href="" class="btn fs-4" style="background-color: #FF6F61">اضف الي السله</a> -->
+                  <a href="{{route("products.show",[$data->id])}}" class="btn fs-4" style="background-color: black ; color: #f32786">التفاصيل</a>
+                  <!-- <a href="" class="btn fs-4" style="background-color: #f32786">اضف الي السله</a> -->
                 </div>
                 </div>
               </div>
@@ -396,5 +272,4 @@ background: #f3f6ff; ">
       <div>
 
       </div>
->>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
 @endsection

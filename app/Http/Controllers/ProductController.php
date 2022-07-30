@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 
 
 
-=======
+
+
 use Illuminate\Support\Facades\DB;
->>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
+
 class ProductController extends Controller
 {
     /**
@@ -81,13 +81,12 @@ class ProductController extends Controller
         $product->photo = $path;
         $product->category_id = $request->category_id;
         $product->save();
-<<<<<<< HEAD
 
-        return redirect('/');
-=======
-     
+
+        // return redirect('/');
+
         return redirect('/productAdmin');
->>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
+
         // ->route('/')
         //                 ->with('success','تمت اضافه المنتج');
     }
@@ -100,14 +99,15 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-<<<<<<< HEAD
 
-        return view("users.product.showProduct",["data"=>$product]);
-=======
+
+        // return view("users.product.showProduct",["data"=>$product]);
+
         // $catrel=Category::all();
         $related = $product->relatedProducts(4, true)->with('category')->get();
+
         return view("users.product.showProduct",["data"=>$product,"related"=>$related]);
->>>>>>> ac13dccbc8ac98e096a75bd6a6b8dc1de3f817a0
+
     }
 
     /**

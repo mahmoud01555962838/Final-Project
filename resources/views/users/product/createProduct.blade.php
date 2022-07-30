@@ -21,7 +21,7 @@
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">السعر</label>
-        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="price" value="{{old("price")}}">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="price" value="{{old("price")}}">
         <label class="text-danger">{{$errors->first("price")}}</label>
     </div>
     <div class="mb-3">

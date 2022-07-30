@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string("notes");
             $table->string("city");
             $table->string("area");
+            $table->unsignedBigInteger('user_id');
+            $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
             $table->timestamps();
         });
     }
